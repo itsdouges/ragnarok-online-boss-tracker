@@ -9,7 +9,8 @@ var http = require('http');
 var path = require('path');
 
 var mongoose = require('mongoose');
-var dbURI = 'mongodb://localhost/wcbtdb';
+
+var dbURI = 'mongodb://madou:Orangechicken1@ds031628.mongolab.com:31628/heroku_app23432525';
 mongoose.connect(dbURI);
 
 var app = express();
@@ -36,7 +37,7 @@ app.get('/monsters', routes.getAllMonsters);
 app.get('/u/:user', routes.getUser);
 app.post('/u/', routes.respawn);
 app.post('/p/', routes.pin);
-app.get('/swwww992FFss', routes.populateMonsters);
+//app.get('/swwww992FFss', routes.populateMonsters);
 
 http.createServer(app).listen(app.get('port'), function(){
 	console.log('Express server listening on port ' + app.get('port'));
