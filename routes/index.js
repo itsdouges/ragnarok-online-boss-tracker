@@ -83,7 +83,7 @@ exports.respawn = function(req, res) {
 
 	Users.update(query, update, { upsert : true }, function(err, numberAffected, raw) {
 		if (err) {
-			res.json({ error : error });
+			res.json({ "error" : err });
 		}
 		else {
 			res.json({ success : true });
@@ -96,7 +96,7 @@ exports.pin = function(req, res) {
 
 	Users.update(query, { pinned : req.body.pinned}, { upsert : true }, function(err, numberAffected, raw) {
 		if (err) {
-			res.json({ error : error });
+			res.json({ "error" : err });
 		}
 		else {
 			res.json({ success : true });
