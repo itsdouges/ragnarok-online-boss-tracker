@@ -1,0 +1,29 @@
+doctype html
+html(data-ng-app="wcbtapp")
+	head
+		title= title
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width")
+		link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:300')
+		link(rel='stylesheet' href='/stylesheets/reset.css')
+		link(rel='stylesheet' href='/stylesheets/style.css')
+		script(src='/javascripts/angular.js')
+		script(src='/javascripts/angular-route.js')
+	body
+		header
+			span.logo ROBT
+			span.search
+				label(for="search")
+					span Search:
+				input(id="search" ng-model="search" type="text" placeholder="filterby: monstername")
+		.hspace
+		div(id='container')
+			div(id='body' data-ng-view='')
+		script(src='/javascripts/ui.js')
+		script(src='/javascripts/app.js')
+		script(src='/javascripts/controllers.js')
+		script(src='/javascripts/services.js')
+		script(src='/javascripts/directives.js')
+		.fspace
+		footer
+			div &copy; cyber 2014
