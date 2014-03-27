@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -10,7 +9,7 @@ var path = require('path');
 
 var mongoose = require('mongoose');
 
-var dbURI = 'mongodb://madou:Orangechicken1@ds031628.mongolab.com:31628/heroku_app23432525';
+var dbURI = '-';
 mongoose.connect(dbURI);
 
 var app = express();
