@@ -2,7 +2,7 @@ var Monsters = require('../models/monster');
 var Users = require('../models/user');
 
 exports.index = function(req, res) {
-	res.render('layout', { title: 'wcbt: hnic' });
+	res.render('layout', { title: 'RO Boss Tracker' });
 };
 
 exports.populateMonsters = function(req, res) {
@@ -30,9 +30,9 @@ exports.populateMonsters = function(req, res) {
 }
 
 exports.getAllMonsters = function(req, res) {
-	Monsters.find(function(error, response) {
+	Monsters.find({}).sort('id').exec(function (error, response) {
 		if (error) {
-			res.json({ error : true });
+			res.json({ 'error' : error });
 		}
 		else {
 			res.json(response);
@@ -43,7 +43,7 @@ exports.getAllMonsters = function(req, res) {
 exports.getUser = function(req, res) {
 	Users.find({ user: req.params.user }, function(error, response) {
 		if (error) {
-			res.json({ error : true });
+			res.json({ 'error' : error });
 		}
 		else {
 			for (var i = 0; i < response.length; i++) {
@@ -81,9 +81,10 @@ exports.respawn = function(req, res) {
 		$inc : { amountKilled : 1 }
 	};
 
-	Users.update(query, update, { upsert : true }, function(err, numberAffected, raw) {
-		if (err) {
-			res.json({ "error" : err });
+	Users.update(query, update, { upsert : true }, function(error, numberAffected, raw) {
+		if (error) {
+			console.log("there was an  error: " + error)
+			res.json({ 'error' : error });
 		}
 		else {
 			res.json({ success : true });
@@ -94,12 +95,17 @@ exports.respawn = function(req, res) {
 exports.pin = function(req, res) {
 	var query = { user: req.body.user, cardid: req.body.cardid };
 
-	Users.update(query, { pinned : req.body.pinned}, { upsert : true }, function(err, numberAffected, raw) {
-		if (err) {
-			res.json({ "error" : err });
+	Users.update(query, { pinned : req.body.pinned}, { upsert : true }, function(error, numberAffected, raw) {
+		if (error) {
+
 		}
 		else {
 			res.json({ success : true });
 		}
 	});
 };
+
+function handleError(error) {
+	console.log("there was an  error: " + error)
+	res.json({ "error" : error });
+}

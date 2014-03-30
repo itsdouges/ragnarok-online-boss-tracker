@@ -37,7 +37,7 @@ app.get('/monsters', routes.getAllMonsters);
 app.get('/u/:user', routes.getUser);
 app.post('/u/', routes.respawn);
 app.post('/p/', routes.pin);
-//app.get('/swwww992FFss', routes.populateMonsters);
+app.get('/swwww992FFss', routes.populateMonsters);
 
 http.createServer(app).listen(app.get('port'), function(){
 	console.log('Express server listening on port ' + app.get('port'));

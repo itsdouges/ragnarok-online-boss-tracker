@@ -41,9 +41,9 @@ app.controller('wcbtController', function ($scope, $http, $routeParams, $interva
 					headers : { 'Accept' : 'application/json'}
 				}).success(function(userResponse) {
 					angular.forEach(userResponse, function(value, key) {
-						monsterResponse[value.cardid].pinned = value.pinned;
-						monsterResponse[value.cardid].secondsTillSpawn = value.secondsTillSpawn;
-						monsterResponse[value.cardid].amountKilled = value.amountKilled;
+						$scope.cards[value.cardid].pinned = value.pinned;
+						$scope.cards[value.cardid].secondsTillSpawn = value.secondsTillSpawn;
+						$scope.cards[value.cardid].amountKilled = value.amountKilled;
 					});
 				});
 			}
@@ -61,6 +61,8 @@ app.controller('wcbtController', function ($scope, $http, $routeParams, $interva
 			'cardid' : cardid
 		};
 
+		console.log(request);
+
 		$http({
 			url: '/u/',
 			method : 'POST',
@@ -70,10 +72,12 @@ app.controller('wcbtController', function ($scope, $http, $routeParams, $interva
 		}).success(function(data) {
 			$scope.cards[cardid].secondsTillSpawn = respawntime * 60;
 
-			if ($scope.cards[cardid].amountKilled)
+			if ($scope.cards[cardid].amountKilled) {
 				$scope.cards[cardid].amountKilled++;
-			else
+			}
+			else {
 				$scope.cards[cardid].amountKilled = 1;
+			}
 		})
 	};
 

@@ -10,6 +10,10 @@ html {
     cursor: default;
 }
 
+.clear {
+    clear: both;
+}
+
 .search label > span,
 .fakehidden {
     position: absolute;
@@ -23,6 +27,11 @@ body {
     font-family: 'Open Sans', sans-serif;
     text-shadow: 1px 1px 1px rgba(0, 0, 1, 0.1);
     text-align: center;
+    background: gray;
+}
+
+input {
+        font-family: 'Open Sans', sans-serif;
 }
 
 header {
@@ -33,10 +42,10 @@ header {
     left: 0;
     top: 0;
     z-index: 99;
-    background: gray;
+    background: #0a0a0a;
     padding: 0.25em;
     text-align: center;
-    border-bottom: 1px solid black;
+    color: white;
 }
 
 .hspace {
@@ -46,6 +55,12 @@ header {
 .logo {
     display: block;
     font-size: 2em;
+}
+
+.logo > span {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .search label {
@@ -58,7 +73,8 @@ header {
 .search input {
     font-size: 1.5em;
     background-color: transparent;
-    border: 1px black solid;
+    border: none;
+    color: gray;
     margin: 0;
     margin-top: 0.25em;
 }
@@ -79,10 +95,10 @@ header {
     word-wrap: break-word;
 }
 
-#body > div {
+.card {
     display: block;
     border-bottom: 1px solid black;
-    height: 130px;
+    height: 100px;
     position: relative;
     text-align: center;
     background: white;
@@ -96,6 +112,7 @@ header {
     left: 0;
     padding: 5px;
     text-align: left;
+    z-index: 1;
 } 
 
 .name > a {
@@ -104,15 +121,20 @@ header {
     color: black;
 }
 
+.name > div {
+    margin: 5px;
+}
+
 .reset {
     display: inline-block;
-    height: 130px;
-    width: 130px;
-    float: left;
+    height: 100px;
+    width: 170px;
+    z-index: 999;
     background: url('/images/respawn.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    opacity: 0.25;
 }
 
 .stats {
@@ -120,14 +142,16 @@ header {
     display: block;
     left: 0;
     bottom: 0;
-    padding: 5px;
+    padding: 10px;
 }
 
 .map {
     display: inline-block;
-    height: 130px;
-    width: 130px;
-    float: right;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
     background: black;
     background-size: cover;
 }
@@ -137,12 +161,15 @@ header {
 }
 
 footer {
-    background: pink;
+    background: url('http://i.imgur.com/mciBns1.png') no-repeat center;
+    background-size: cover;
     line-height: 180px;
     height: 180px;
     text-align: center;
     position: fixed;
     bottom: 0;
+    font-size: 2em;
+    color: black;
     width: 100%;
     z-index: -999;
 }
@@ -164,7 +191,6 @@ input[type=checkbox]:checked + label {
     height: 19px;
     width: 19px;
     display: inline-block;
-    z-index: 9999;
 }
 
 input[type=checkbox] + label {
@@ -176,7 +202,32 @@ input[type=checkbox]:checked + label {
 }
 
 /********************************************************/
-
 /* medium */
+@media screen and (min-width: 650px) {
+    #container {
+        background: gray;
+    }
+
+    #body {
+        max-width: 900px;
+        margin: 0 auto;
+        display: inline-block;
+        margin-bottom: -2px;
+    }
+
+    .logo {
+
+    }
+
+    .card {
+        width: 50%;
+        float: left;
+    }
+}
 
 /* big */
+@media screen and (min-width: 920px) {
+    #body { 
+        width: 900px;
+    }
+}

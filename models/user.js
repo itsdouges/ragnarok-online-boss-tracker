@@ -4,8 +4,7 @@ var userSchema = new Schema({
 	user: 
 	{
 		type: String, 
-		required: true,
-		unique: true
+		required: true
 	},
 	cardid: 
 	{
