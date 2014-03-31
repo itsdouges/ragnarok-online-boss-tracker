@@ -5,12 +5,10 @@
         <a target="_blank" href="{{ classic.monsterinfo + card.monsterid + '/' }}">{{ card.monstername }}</a>
         <div>map: {{ card.mapid }}</div>
         <div>kills: <span ng-if="!card.amountKilled">0</span> {{ card.amountKilled }}</div>
-        <div>
-            <count-down ng-if="card.secondsTillSpawn" count-down>{{ card.msg }} {{ card.hrs }} {{ card.mins }} {{ card.secs }}</count-down>
-        </div>
+        <countdown ng-if="card.secondsTillSpawn" count-down>{{ card.msg }} {{ card.hrs }} {{ card.mins }} {{ card.secs }}</countdown>
     </span>
 
     <a class="reset" href="" ng-Click="respawn(card.id, card.spawntime, user)"></a>
-    
+
     <a class="map" target="_blank" style="background-image: url({{ mapimg + card.mapid + '.png' }});" href="{{ classic.mapinfo + card.mapid + '/' }}"></a>
 </div>

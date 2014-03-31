@@ -1,5 +1,6 @@
 app.directive('countDown', function($interval, dateFilter) {
-	function link(scope, element, attrs) {
+	return function link(scope, element, attrs) {
+
 		function update() {
 			var secondsRemaining = scope.card.secondsTillSpawn;
  
@@ -49,9 +50,5 @@ app.directive('countDown', function($interval, dateFilter) {
 				timeout();
 			}
 		});
-	};
-
-	return {
-		link: link
 	};
 });

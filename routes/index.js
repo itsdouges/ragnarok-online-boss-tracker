@@ -2,7 +2,7 @@ var Monsters = require('../models/monster');
 var Users = require('../models/user');
 
 exports.index = function(req, res) {
-	res.render('layout', { title: 'RO Boss Tracker' });
+	res.render('layout', { title: 'KeepTrack by cyber' });
 };
 
 exports.populateMonsters = function(req, res) {

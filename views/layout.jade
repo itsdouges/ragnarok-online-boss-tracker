@@ -11,11 +11,12 @@ html(data-ng-app="wcbtapp")
 		script(src='/javascripts/angular-route.js')
 	body
 		header
-			span.logo ROBOSSTRACK
+			span.logo KeepTrack 
+				span for iRO Classic
 			span.search
 				label(for="search")
 					span Search:
-				input(id="search" ng-model="search" type="text" placeholder="filterby: monstername")
+				input(id="search" ng-model="search" type="text" placeholder="filterby: name or mapid")
 		.hspace
 		div(id='container')
 			div(id='body' data-ng-view='')
@@ -26,4 +27,4 @@ html(data-ng-app="wcbtapp")
 		script(src='/javascripts/directives.js')
 		.fspace.clear
 		footer
-			div 
+			div from cyber
