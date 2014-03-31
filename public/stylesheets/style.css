@@ -101,7 +101,7 @@ header {
 .card {
     display: block;
     border-bottom: 1px solid black;
-    height: 100px;
+    height: 80px;
     position: relative;
     text-align: center;
     background: white;
@@ -127,6 +127,8 @@ countdown {
     font-size: 1.5em;
     text-decoration: none;
     color: black;
+    position: relative;
+    overflow: hidden;
 }
 
 .name > div {
@@ -135,8 +137,8 @@ countdown {
 
 .reset {
     display: inline-block;
-    height: 100px;
-    width: 170px;
+    height: 80px;
+    width: 150px;
     z-index: 999;
     background: url('/images/respawn.png');
     background-repeat: no-repeat;
@@ -156,8 +158,8 @@ countdown {
 
 .map {
     display: inline-block;
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     position: absolute;
     top: 0;
     right: 0;
@@ -237,6 +239,10 @@ input[type=checkbox]:checked + label {
 /* big */
 @media screen and (min-width: 920px) {
     #body { 
-        width: 900px;
+        max-width: 1200px;
+    }
+
+    .card {
+        width: 33%;
     }
 }
