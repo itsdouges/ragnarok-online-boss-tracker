@@ -2,7 +2,7 @@ var Monsters = require('../models/monster');
 var Users = require('../models/user');
 
 exports.index = function(req, res) {
-	res.render('layout', { title: 'KeepTrack by cyber' });
+	res.render('layout', { title: 'KeepTrack for iRO Classic' });
 };
 
 exports.populateMonsters = function(req, res) {
