@@ -22,7 +22,7 @@
 	{"id":"20","monstername":"Dracula","hasvariance":"1","mapid":"gef_dun01","monsterid":"1389","spawntime":"60","renewal":false},
 	{"id":"21","monstername":"Drake","hasvariance":"1","mapid":"treasure02","monsterid":"1112","spawntime":"60","renewal":false},
 	{"id":"22","monstername":"Eddga","hasvariance":"1","mapid":"gld_dun01","monsterid":"1115","spawntime":"480","renewal":false},
-	{"id":"23","monstername":"Eddga","hasvariance":"1","mapid":"pay_fild10","monsterid":"1115","spawntime":"60","renewal":false},
+	{"id":"23","monstername":"Eddga","hasvariance":"1","mapid":"pay_fild10","monsterid":"1115","spawntime":"120","renewal":false},
 	{"id":"24","monstername":"Egnigem Cenia (MVP)","hasvariance":"1","mapid":"lhz_dun02","monsterid":"1658","spawntime":"120","renewal":false},
 	{"id":"25","monstername":"Evil Snake Lord","hasvariance":"1","mapid":"gon_dun03","monsterid":"1418","spawntime":"94","renewal":false},
 	{"id":"26","monstername":"Fallen Bishop","hasvariance":"1","mapid":"abbey02","monsterid":"1871","spawntime":"120","renewal":false},

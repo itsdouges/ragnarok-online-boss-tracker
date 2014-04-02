@@ -7,14 +7,22 @@ app.directive('countDown', function($interval) {
 				scope.card.hrs = Math.floor(secondsRemaining / 3600) + ' hr ';
 				secondsRemaining = secondsRemaining % 3600;
 			}
+			else {
+				scope.card.hrs = '';
+			}
+			
 			if (secondsRemaining >= 60) {
 				scope.card.mins = Math.floor(secondsRemaining / 60) +' min ';
 				secondsRemaining = secondsRemaining % 60;
 			}	
+			else {
+				scope.card.mins = '';
+			}
+
 			if (secondsRemaining > 0) {
 				scope.card.secs = secondsRemaining + ' sec';
 			}
-			if (scope.card.secondsTillSpawn === 0) {
+			else if (scope.card.secondsTillSpawn === 0) {
 				scope.card.secs = '';
 				var d = new Date();
 				if (scope.card.hasvariance) {
