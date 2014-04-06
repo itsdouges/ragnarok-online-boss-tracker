@@ -45,6 +45,8 @@ app.controller('wcbtController', function ($scope, $http, $routeParams, $interva
 						$scope.cards[value.cardid].secondsTillSpawn = value.secondsTillSpawn;
 						$scope.cards[value.cardid].amountKilled = value.amountKilled;
 					});
+
+					console.log($scope.cards);
 				});
 			}
 			else {

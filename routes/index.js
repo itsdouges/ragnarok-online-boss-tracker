@@ -49,6 +49,10 @@ exports.getUser = function(req, res) {
 			for (var i = 0; i < response.length; i++) {
 				response[i].secondsTillSpawn = secondsTillSpawn(response[i].spawntime);
 
+				if (!response[i].pinned) {
+					response[i].pinned = false;
+				}
+
 				if (response[i].secondsTillSpawn < 0) {
 					response[i].secondsTillSpawn = null;
 				}
