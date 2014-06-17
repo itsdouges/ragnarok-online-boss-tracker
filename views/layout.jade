@@ -1,30 +1,27 @@
 doctype html
-html(data-ng-app="wcbtapp")
+html(data-ng-app='wcbtapp')
 	head
-		title= title
-		meta(charset="utf-8")
-		meta(name="viewport" content="width=device-width")
+		title(ng-init='')
+		meta(charset='utf-8')
+		meta(name="viewport" content='width=device-width')
 		link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:300')
-		link(rel='stylesheet' href='/stylesheets/reset.css')
-		link(rel='stylesheet' href='/stylesheets/style.css')
-		script(src='/javascripts/angular.js')
-		script(src='/javascripts/angular-route.js')
+		link(rel='stylesheet/less', type='text/css' href='/stylesheets/app.less')
+		script(src='/components/less/dist/less-1.7.0.js')
 	body
-		header
-			span.logo KeepTrack 
-				span for iRO Classic
-			span.search
-				label(for="search")
-					span Search:
-				input(id="search" ng-model="search" type="text" placeholder="filterby: name or mapid")
-		.hspace
-		div(id='container')
-			div(id='body' data-ng-view='')
-		script(src='/javascripts/ui.js')
-		script(src='/javascripts/app.js')
-		script(src='/javascripts/controllers.js')
-		script(src='/javascripts/services.js')
-		script(src='/javascripts/directives.js')
-		.fspace.clear
-		footer
-			div swag
+		div.navbar.sticky
+			span
+				a.title-text(href='/') KillTracker
+				span.small-text  for
+					a(href='http://www.playragnarok.com' target='_blank')  iRO Classic
+		.navbar-filler
+		div.container
+			div.body(data-ng-view='')
+			script(src='/components/angular/angular.js')
+			script(src='/components/angular-route/angular-route.js')
+			script(src='/app/app.js')
+			script(src='/app/controllers.js')
+			script(src='/app/services.js')
+			script(src='/app/directives.js')
+		div.footer.sticky
+			all :-)
+		.footer-filler

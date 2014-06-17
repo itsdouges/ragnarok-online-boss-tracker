@@ -1,0 +1,18 @@
+// mixins.less
+
+.selectable(@selectable) {
+	-webkit-touch-callout: @selectable;
+	-webkit-user-select: @selectable;
+	-khtml-user-select: @selectable;
+	-moz-user-select: @selectable;
+	-ms-user-select: @selectable;
+	user-select: @selectable;
+}
+
+.borderbox() {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box; /* ff2 */
+	-ms-box-sizing: border-box; /* ie8 */
+	-webkit-box-sizing: border-box; /* safari3 */
+	-khtml-box-sizing: border-box; /* konqueror */
+}

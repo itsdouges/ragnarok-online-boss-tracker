@@ -1,13 +1,32 @@
-<div class="card" style="background-image: url({{ monsterimg + card.monsterid + '.png' }})" ng-repeat="card in cards | orderBy:['-pinned','secondsTillSpawn', 'monstername'] | filter: search">
+<div class="card"
+		style="background-image: url({{ btCtrl.monsterimg + card.monsterid + '.png' }})"
+		ng-repeat="card in btCtrl.cards | orderBy:['-pinned','secondsTillSpawn', 'monstername']">
     <span class="name">
-        <input ngChecked="card.pinned" ng-change="pin(card.id, card.pinned, user)" ng-model="card.pinned" id="pin{{ card.id }}" type="checkbox"/>
-        <label for="pin{{ card.id }}"></label>
-        <a target="_blank" value="{{ card.monstername }}" href="{{ classic.monsterinfo + card.monsterid + '/' }}">{{ card.monstername }}</a>
-        <div>kills: <span ng-if="!card.amountKilled">0</span> {{ card.amountKilled }}</div>
-        <countdown ng-if="card.secondsTillSpawn" count-down>{{ card.msg }} {{ card.hrs }} {{ card.mins }} {{ card.secs }}</countdown>
+        <input class="checkbox star display-none" ngChecked="card.pinned"
+        		ng-change="pin(card.id, card.pinned, user)"
+        		ng-model="card.pinned" id="pin{{ card.id }}"
+        		type="checkbox"/>
+
+        <label class="checkbox star" for="pin{{ card.id }}"></label>
+
+        <a target="_blank"
+        	value="{{ card.monstername }}"
+        	href="{{ btCtrl.classic.monsterinfo + card.monsterid + '/' }}">
+        	{{ card.monstername }}
+    	</a>
+
+        <div>
+        	kills: <span ng-if="!card.amountKilled">0</span> {{ card.amountKilled }}
+        </div>
+
+        <span ng-if="card.secondsTillSpawn" count-down>
+        	{{ card.msg }} {{ card.hrs }} {{ card.mins }} {{ card.secs }}
+    	</span>
     </span>
 
-    <a class="reset" href="" ng-Click="respawn(card.id, card.spawntime, user)"></a>
+    <a class="reset" href="" ng-Click="btCtrl.respawn(card.id, card.spawntime, btCtrl.user)"></a>
 
-    <a class="map" target="_blank" style="background-image: url({{ mapimg + card.mapid + '.png' }});" href="{{ classic.mapinfo + card.mapid + '/' }}"></a>
+    <a class="map" target="_blank"
+    	style="background-image: url({{ btCtrl.mapimg + card.mapid + '.png' }});"
+    	href="{{ btCtrl.classic.mapinfo + card.mapid + '/' }}"></a>
 </div>

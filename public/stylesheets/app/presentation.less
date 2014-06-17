@@ -1,0 +1,121 @@
+// presentation.less
+
+@font-family: 'Open Sans', sans-serif;
+@body-background: white;
+
+// -- common presentation
+
+body {
+    font-family: @font-family;
+    text-shadow: 1px 1px 1px rgba(0, 0, 1, 0.1);
+    .selectable(none);
+    cursor: default;
+}
+
+input {
+    font-family: @font-family;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+.checkbox.star {
+    background-image: url('/images/staroff.png');
+}
+
+.checkbox:checked + .checkbox.star {
+    background-image: url('/images/staron.png');
+}
+
+input[type=checkbox] + label,
+input[type=checkbox]:checked + label {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.title-link {
+
+}
+
+// -- top down presentation
+
+.navbar {
+    background: #0a0a0a;
+    color: white;
+    text-align: center;
+}
+
+.title-text {
+    font-size: 2em;
+}
+
+.normal-text {
+	font-size: 1em;
+}
+
+.small-text {
+    font-size: 0.75em;
+}
+
+.body {
+
+}
+
+.container {
+	background: @body-background;
+	padding: 1em;
+    overflow: auto;
+}
+
+.card {
+    border-bottom: 1px solid black;
+    text-align: center;
+    background: white;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.name {
+    text-align: left;
+}
+
+.reset-button {
+    background: url('/images/respawn.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.25;
+}
+
+.map-image {
+    background: black;
+    background-size: cover;
+}
+
+.footer {
+    background: url('http://i.imgur.com/mciBns1.png') no-repeat center;
+    background-size: cover;
+    text-align: center;
+    color: black;
+    font-size: 2em;
+}
+
+@media screen and (min-width: @medium-screen) {
+	.navbar {
+		text-align: left;
+	}
+
+	.title-text {
+		font-size: 1.75em;
+	}
+}
+
+@media screen and (min-width: @large-screen) {
+
+}

@@ -1,0 +1,141 @@
+// layout.less
+
+@navbar-big: 60px;
+@navbar-small: 30px;
+@map-width: 80px;
+@footer-height: 180px;
+
+* {
+	.borderbox();
+}
+
+// -- common layout
+
+.hidden {
+    position: absolute;
+    left: -9999px;
+    top: -99999px;
+}
+
+.display-none {
+	display: none;
+}
+
+h1 {
+	margin: 1em 0.5em 0.5em;
+}
+
+input[type=checkbox] + label,
+input[type=checkbox]:checked + label {
+    height: 19px;
+    width: 19px;
+    display: inline-block;
+}
+
+section {
+    margin: 2em 0;
+}
+
+// -- top down layout
+
+.navbar {
+    height: @navbar-big;
+    line-height: @navbar-big;
+    padding: 0 1em;
+
+	&.sticky {
+	    z-index: @navbar-z;
+		position: fixed;
+		top: 0;
+    	left: 0;
+    	right: 0;
+    }
+}
+
+.navbar-filler {
+    height: @navbar-big;
+}
+
+.container {
+	z-index: @container-z;
+}
+
+@card-height: 80px;
+.card {
+    display: block;
+    height: @card-height;
+    position: relative;
+}
+
+countdown {
+    display: block;
+    margin: 5px;
+}
+
+.name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    z-index: @name-z;
+}
+
+.reset-button {
+    display: inline-block;
+    height: 80px;
+    width: 150px;
+    z-index: @reset-button-z;
+    position: relative;
+}
+
+.map-image {
+    display: inline-block;
+    height: @map-width;
+    width: @map-width;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.footer {
+    line-height: 180px;
+    height: @footer-height;
+
+    &.sticky {
+    	position: fixed;
+	    z-index: @footer-z;
+        bottom: 0;
+	    left: 0;
+	    right: 0;
+    }
+}
+
+.footer-filler {
+    height: @footer-height;
+}
+
+@media screen and (min-width: @medium-screen) {
+    .body {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .logo {
+
+    }
+
+    .card {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media screen and (min-width: @large-screen) {
+    .body {
+        max-width: 1000px;
+    }
+
+    .card {
+        width: 33.3333333%;
+    }
+}
